@@ -10,6 +10,12 @@ model1 = pickle.load(open('model1.pkl', 'rb'))
 count_vector = pickle.load(open('count_vector.pkl', 'rb'))
 
 
+@app.route('/')
+def view():
+    return render_template('index_1.html')
+
+
+
 @app.route('/home')
 def home():
     return render_template('index_1.html')
