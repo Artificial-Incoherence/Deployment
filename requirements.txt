@@ -12,4 +12,3 @@ itsdangerous==2.0.0
 Jinja2==3.0.0
 MarkupSafe==2.0.0
 Werkzeug==2.0.0
-tensorflow==2.3.0
