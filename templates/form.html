@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>
+		Stock Price
+	</title>
+	<link rel="shortcut icon" href="static/images/tlogo.jfif" type="image/x-icon">  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color:#DADED4;">
+<div class="container">
+<center>
+	<p>&nbsp;</p>
+	<img class="center" src="static/images/new pic.jpg" alt="" width="380" height="250">
+	<p>&nbsp;</p>
+	<h3 style="font-family: times, serif; font-size:40pt;">Select Your Model</h3>
+	<p>&nbsp;</p>
+<div class="button_cont" align="center" style="padding: 10px; width: 30%;">
+<form class=" m-auto" action="{{url_for('LogisticRegression')}} ">
+<button type="submit" class="btn btn-warning btn-block btn-lg"><strong>LogisticRegression &raquo;</a></strong></button>
+</form>
+<p>&nbsp;</p>
+<form class=" m-auto" action="{{url_for('NavieBayes')}}">
+<button type="submit" class="btn btn-warning btn-block btn-lg"><strong>NavieBayes &raquo;</a></strong></button>
+</form>
+<p>&nbsp;</p>
+<form class=" m-auto" action="{{url_for('NeuralNetworks')}}">
+<button type="submit" class="btn btn-warning btn-block btn-lg"><strong>NeuralNetworks &raquo;</a></strong></button>
+</form>
+<p>&nbsp;</p>
+</form>
+</div>
+</body>
+</html>
