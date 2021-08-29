@@ -1,21 +1,13 @@
 import pickle
 import numpy as np
 import pandas as pd
-import os
 from flask import Flask, request, render_template
-from tensorflow.python.keras.models import load_model
 
 app = Flask(__name__)
 
 model = pickle.load(open('model.pkl', 'rb'))
 model1 = pickle.load(open('model1.pkl', 'rb'))
-model2 = load_model('model2.h5')
 count_vector = pickle.load(open('count_vector.pkl', 'rb'))
-
-
-@app.route('/')
-def view():
-    return render_template('index_1.html')
 
 
 @app.route('/home')
@@ -85,26 +77,6 @@ def predict_2():
 def NeuralNetworks():
     return render_template('NeuralNetwork.html')
 
-
-@app.route('/predict_3', methods=['POST'])
-def predict_3():
-    news = request.form['text']
-    Open = int(request.form['Open'])
-    Volume = int(request.form['Volume'])
-    High = int(request.form['High'])
-    Low = int(request.form['Low'])
-    news = str(news)
-    text = count_vector.transform([news])
-    output = model2.predict(text)
-
-    if output == 1:
-        res_val = "Positive"
-    elif output == 0:
-        res_val = "Negative"
-    else:
-        res_val = "Rating which does not match with"
-
-    return render_template('NeuralNetwork.html', prediction_text='Customer has given a {} review'.format(res_val))
 
 
 if __name__ == "__main__":
